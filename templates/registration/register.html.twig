@@ -1,0 +1,337 @@
+<html lang="en">
+<!--begin::Head-->
+<head>
+    <title>Lutte - Register </title>
+    <meta charset="utf-8"/>
+    <link rel="shortcut icon" href="{{ asset('assets/media/logos/favicon.ico') }}"/>
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700"/>
+    <!--end::Fonts-->
+    <!--begin::Global Stylesheets Bundle(used by all pages)-->
+    <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css"/>
+    <!--end::Global Stylesheets Bundle-->
+    <!--Begin::Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+            var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5FS8GGP');</script>
+    <!--End::Google Tag Manager -->
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+<body id="kt_body" class="auth-bg">
+<!--begin::Theme mode setup on page load-->
+<!--end::Theme mode setup on page load-->
+<!--begin::Main-->
+<div class="d-flex flex-column flex-root">
+    <!--begin::Image placeholder-->
+    <style>.auth-page-bg {
+            background-image: url('assets/media/illustrations/sigma-1/14.png');
+        }
+
+<<<<<<< HEAD
+        [data-theme="dark"] .auth-page-bg {
+            background-image: url('/assets/media/illustrations/sigma-1/14-dark.png');
+        }</style>
+    <!--end::Image placeholder-->
+    <!--begin::Authentication - Sign-up -->
+    <div class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed auth-page-bg">
+        <!--begin::Content-->
+        <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
+            <!--begin::Logo-->
+
+            <!--end::Logo-->
+            <!--begin::Wrapper-->
+            {% for flash_error in app.flashes('verify_email_error') %}
+                <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+            {% endfor %}
+            <div class="w-lg-600px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
+                <!--begin::Form-->
+                {{ form_start(registrationForm,{'attr': {'id': 'kt_sign_up_form','novalidate':'novalidate','class':'form w-100','data-kt-redirect-url':path('app_register'),'id':'kt_sign_up_form'}}) }}
+
+
+                <!--begin::Heading-->
+                <div class="mb-10 text-center">
+                    <!--begin::Title-->
+                    <h1 class="text-dark mb-3">Create an Account</h1>
+                    <!--end::Title-->
+                    <!--begin::Link-->
+                    <div class="text-gray-400 fw-semibold fs-4">Already have an account?
+                        <a href="{{ path('app_login') }}" class="link-primary fw-bold">Sign in here</a></div>
+                    <!--end::Link-->
+                </div>
+                <!--end::Heading-->
+
+                <!--begin::Separator-->
+                <div class="d-flex align-items-center mb-10">
+                    <div class="border-bottom border-gray-300 mw-50 w-100"></div>
+                    <span class="fw-semibold text-gray-400 fs-7 mx-2">OR</span>
+                    <div class="border-bottom border-gray-300 mw-50 w-100"></div>
+                </div>
+                <!--end::Separator-->
+                <!--begin::Input group-->
+                <!--begin::Input group-->
+                <div class="row fv-row mb-7">
+                    <!--begin::Col-->
+                    <div class="col-xl-6">
+                        <label class="form-label fw-bold text-dark fs-6">First Name</label>
+                        {{ form_widget(registrationForm.firstName ,{ 'attr': {'class': 'form-control form-control-lg form-control-solid'} }) }}
+                    </div>
+                    <!--end::Col-->
+                    <!--begin::Col-->
+                    <div class="col-xl-6">
+                        <label class="form-label fw-bold text-dark fs-6">Last Name</label>
+                        {{ form_widget(registrationForm.lastName ,{ 'attr': {'class': 'form-control form-control-lg form-control-solid'} }) }}
+                    </div>
+
+
+                    <div class="col-xl-12">
+                        <label class="form-label fw-bold text-dark fs-6 p-2">Gender </label>
+                        <div class="fv-row fv-plugins-icon-container fv-plugins-bootstrap5-row-valid">
+                            <!--begin::Row-->
+                            <div class="row">
+                                <!--begin::Col-->
+                                <div class="col-lg-6">
+                                    <!--begin::Option-->
+                                    <input type="radio" class="btn-check" name="account_type" value="M"
+                                           id="kt_create_account_form_account_type_corporate" checked="checked">
+                                    <label class="btn btn-outline btn-outline-dashed btn-active-light-primary p-5 d-flex align-items-center"
+                                           for="kt_create_account_form_account_type_corporate">
+                                        <span class="svg-icon svg-icon-3x me-5">
+                                            <i class="las la-male text-primary fs-5x"></i>
+                                        </span>
+                                        <!--begin::Info-->
+                                        <span class="d-block fw-semibold text-start">
+                                            <span class="text-dark fw-bold d-block fs-4 mb-2">Male</span>
+                                        </span>
+                                        <!--end::Info-->
+                                    </label>
+                                    <!--end::Option-->
+                                </div>
+                                <!--end::Col-->
+                                <!--begin::Col-->
+                                <div class="col-lg-6">
+                                    <!--begin::Option-->
+                                    <input type="radio" class="btn-check" name="account_type" value="F"
+                                           id="kt_create_account_form_account_type_personal">
+                                    <label class="btn btn-outline btn-outline-dashed btn-active-light-primary p-5 d-flex align-items-center mb-10"
+                                           for="kt_create_account_form_account_type_personal">
+												<span class="svg-icon svg-icon-3x me-5">
+															<i class="las la-female text-primary fs-5x"></i>
+														</span>
+                                        <!--begin::Info-->
+                                        <span class="d-block fw-semibold text-start">
+                                            <span class="text-dark fw-bold d-block fs-4 mb-2">Female</span>
+                                        </span>
+                                        <!--end::Info-->
+                                    </label>
+                                    <!--end::Option-->
+                                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                                </div>
+                                <!--end::Col-->
+                            </div>
+                            <!--end::Row-->
+                        </div>
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+                <!--begin::Input group-->
+                <div class="fv-row mb-7">
+                    <label class="form-label fw-bold text-dark fs-6">Email</label>
+                    {{ form_widget(registrationForm.email ,{ 'attr': {'class': 'form-control form-control-lg form-control-solid'} }) }}
+                    {{ form_errors(registrationForm.email ) }}
+
+                </div>
+                <!--end::Input group-->
+                <!--begin::Input group-->
+                <div class="mb-10 fv-row" data-kt-password-meter="true">
+                    <!--begin::Wrapper-->
+                    <div class="mb-1">
+                        <!--begin::Label-->
+                        <label class="form-label fw-bold text-dark fs-6">Password</label>
+                        <!--end::Label-->
+                        <!--begin::Input wrapper-->
+                        <div class="position-relative mb-3">
+                            {{ form_widget(registrationForm.plainPassword.first ,{ 'attr': {'class': 'form-control form-control-lg form-control-solid'} }) }}
+                            <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2"
+                                  data-kt-password-meter-control="visibility">
+											<i class="bi bi-eye-slash fs-2"></i>
+											<i class="bi bi-eye fs-2 d-none"></i>
+										</span>
+                        </div>
+                        <!--end::Input wrapper-->
+                        <!--begin::Meter-->
+                        <div class="d-flex align-items-center mb-3" data-kt-password-meter-control="highlight">
+                            <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+                            <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+                            <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+                            <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px"></div>
+                        </div>
+                        <!--end::Meter-->
+                    </div>
+                    <!--end::Wrapper-->
+                    <!--begin::Hint-->
+                    <div class="text-muted">Use 8 or more characters with a mix of letters, numbers & symbols.</div>
+                    <!--end::Hint-->
+                </div>
+                <!--end::Input group=-->
+                <!--begin::Input group-->
+                <div class="fv-row mb-5">
+                    <label class="form-label fw-bold text-dark fs-6">Confirm Password</label>
+                    {{ form_widget(registrationForm.plainPassword.second ,{ 'attr': {'class': 'form-control form-control-lg form-control-solid'} }) }}
+                </div>
+                <!--end::Input group-->
+                <!--begin::Input group-->
+                <div class="fv-row mb-10">
+                    <label class="form-check form-check-custom form-check-solid form-check-inline">
+                        {{ form_widget(registrationForm.agreeTerms ,{ 'attr': {'class': 'form-check-input'} }) }}
+                        <span class="form-check-label fw-semibold text-gray-700 fs-6">IAgree<a data-bs-toggle="modal" data-bs-target="#kt_modal_scrollable_2" href="#" class="ms-1 link-primary">Terms and conditions</a>.</span>
+                    </label>
+                </div>
+                <!--end::Input group-->
+                <!--begin::Actions-->
+                <div class="text-center">
+                    <button type="button" id="kt_sign_up_submit" class="btn btn-lg btn-primary">
+                        <span class="indicator-label">Submit</span>
+                        <span class="indicator-progress">Please wait...
+									<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                    </button>
+                </div>
+                <!--end::Actions-->
+                {{ form_rest(registrationForm) }}
+
+                {{ form_end(registrationForm) }}
+                <!--end::Form-->
+            </div>
+            <!--end::Wrapper-->
+        </div>
+
+        <!--end::Content-->
+    </div>
+    <div class="modal fade" tabindex="-1" id="kt_modal_scrollable_2">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Terms and conditions.</h5>
+
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <span class="svg-icon svg-icon-2x"></span>
+                    </div>
+                    <!--end::Close-->
+                </div>
+
+                <div class="modal-body">
+                    <p>Long modal body text goes here.</p>
+                    <p>Terms and conditions template by WebsitePolicies.com
+                        Generic Terms and Conditions Template
+                        Please read these terms and conditions ("terms and conditions", "terms") carefully before using
+                        [website] website (“website”, "service") operated by [name] ("us", 'we", "our").
+                        Conditions of use
+                        By using this website, you certify that you have read and reviewed this Agreement and that you
+                        agree to comply with its terms. If you do not want to be bound by the terms of this Agreement,
+                        you are advised to leave the website accordingly. [name] only grants use and access of this
+                        website, its products, and its services to those who have accepted its terms.
+                        Privacy policy
+                        Before you continue using our website, we advise you to read our privacy policy [link to privacy
+                        policy] regarding our user data collection. It will help you better understand our practices.
+                        Age restriction
+                        You must be at least 18 (eighteen) years of age before you can use this website. By using this
+                        website, you warrant that you are at least 18 years of age and you may legally adhere to this
+                        Agreement. [name] assumes no responsibility for liabilities related to age misrepresentation.
+                        Intellectual property
+                        You agree that all materials, products, and services provided on this website are the property of
+                        [name], its affiliates, directors, officers, employees, agents, suppliers, or licensors including all
+                        copyrights, trade secrets, trademarks, patents, and other intellectual property. You also agree
+                        that you will not reproduce or redistribute the [name]’s intellectual property in any way,
+                        including electronic, digital, or new trademark registrations.
+                        You grant [name] a royalty-free and non-exclusive license to display, use, copy, transmit, and
+                        broadcast the content you upload and publish. For issues regarding intellectual property claims,
+                        you should contact the company in order to come to an agreement.
+                        User accounts
+                        As a user of this website, you may be asked to register with us and provide private information.
+                        You are responsible for ensuring the accuracy of this information, and you are responsible for
+                        maintaining the safety and security of your identifying information. You are also responsible for
+                        all activities that occur under your account or password.
+                        If you think there are any possible issues regarding the security of your account on the website,
+                        inform us immediately so we may address them accordingly.
+                        We reserve all rights to terminate accounts, edit or remove content and cancel orders at our sole
+                        discretion.
+                        Terms and conditions template by WebsitePolicies.com
+                        Applicable law
+                        By visiting this website, you agree that the laws of the [location], without regard to principles of
+                        conflict laws, will govern these terms and conditions, or any dispute of any sort that might come
+                        between [name] and you, or its business partners and associates.
+                        Disputes
+                        Any dispute related in any way to your visit to this website or to products you purchase from us
+                        shall be arbitrated by state or federal court [location] and you consent to exclusive jurisdiction
+                        and venue of such courts.
+                        Indemnification
+                        You agree to indemnify [name] and its affiliates and hold [name] harmless against legal claims
+                        and demands that may arise from your use or misuse of our services. We reserve the right to
+                        select our own legal counsel.
+                        Limitation on liability
+                        [name] is not liable for any damages that may occur to you as a result of your misuse of our
+                        website.
+                        [name] reserves the right to edit, modify, and change this Agreement at any time. We shall let
+                        our users know of these changes through electronic mail. This Agreement is an understanding
+                        between [name] and the user, and this supersedes and replaces all prior agreements regarding
+                        the use of this website.
+                        Save your time and take the guesswork out of the legal jargon with our smart generators trusted
+                        by thousands. Create bulletproof terms and conditions personalized to your needs in minutes.</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end::Authentication - Sign-up-->
+</div>
+<!--end::Main-->
+<!--begin::Javascript-->
+<!--begin::Global Javascript Bundle(used by all pages)-->
+<script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
+<script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
+<!--end::Global Javascript Bundle-->
+<!--begin::Custom Javascript(used by this page)-->
+<script src="{{ asset('assets/js/custom/authentication/sign-up/general.js') }}"></script>
+<script>
+    $("#kt_datepicker_2").flatpickr({
+        enableTime: true,
+        dateFormat: "Y-m-d H:i",
+    });
+</script>
+<!--end::Custom Javascript-->
+<!--end::Javascript-->
+</body>
+<!--end::Body-->
+</html>
+=======
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+    {% for flash_error in app.flashes('verifier votre email') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    <h1>Inscription</h1>
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Mot de passe'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn">s'inscrire</button>
+    {{ form_end(registrationForm) }}
+{% endblock %}
+>>>>>>> d52008ea3b4817606005e07e0b14b6d9966dc876

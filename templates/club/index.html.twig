@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Club index{% endblock %}
+
+{% block body %}
+    <h1>Club index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>ArabicName</th>
+                <th>Abreviation</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Fax</th>
+                <th>Para</th>
+                <th>ZipCode</th>
+                <th>AutorisationCode</th>
+                <th>FondationYear</th>
+                <th>CoachName</th>
+                <th>CoachPhone</th>
+                <th>PresidentName</th>
+                <th>PresidentPhone</th>
+                <th>SecretaryName</th>
+                <th>TreasurerPhone</th>
+                <th>SecretaryPhone</th>
+                <th>TreasurerName</th>
+                <th>CreatedAt</th>
+                <th>UpdatedAt</th>
+                <th>Email</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for club in clubs %}
+            <tr>
+                <td>{{ club.id }}</td>
+                <td>{{ club.name }}</td>
+                <td>{{ club.arabicName }}</td>
+                <td>{{ club.abreviation }}</td>
+                <td>{{ club.address }}</td>
+                <td>{{ club.phone }}</td>
+                <td>{{ club.fax }}</td>
+                <td>{{ club.para ? 'Yes' : 'No' }}</td>
+                <td>{{ club.zipCode }}</td>
+                <td>{{ club.autorisationCode }}</td>
+<<<<<<< HEAD
+                <td>{{ club.fondationYear ? club.fondationYear|date('Y-m-d H:i:s') : '' }}/td>
+=======
+                <td>{{ club.fondationYear }}</td>
+>>>>>>> d52008ea3b4817606005e07e0b14b6d9966dc876
+                <td>{{ club.coachName }}</td>
+                <td>{{ club.coachPhone }}</td>
+                <td>{{ club.presidentName }}</td>
+                <td>{{ club.presidentPhone }}</td>
+                <td>{{ club.secretaryName }}</td>
+                <td>{{ club.treasurerPhone }}</td>
+                <td>{{ club.secretaryPhone }}</td>
+                <td>{{ club.treasurerName }}</td>
+                <td>{{ club.createdAt ? club.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ club.updatedAt ? club.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ club.email }}</td>
+                <td>
+                    <a href="{{ path('app_club_show', {'id': club.id}) }}">show</a>
+                    <a href="{{ path('app_club_edit', {'id': club.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="23">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_club_new') }}">Create new</a>
+{% endblock %}

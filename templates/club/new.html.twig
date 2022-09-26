@@ -1,0 +1,431 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Club{% endblock %}
+
+{% block body %}
+<<<<<<< HEAD
+
+    <!--begin::Content-->
+    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+        <!--begin::Container-->
+        <div class="container-xxl" id="kt_content_container">
+            <!--begin::Form-->
+            {{ form_start(form,{'attr': {'id': 'kt_sign_up_form','novalidate':'novalidate','class':'form d-flex flex-column flex-lg-row','data-kt-redirect-url':path('app_club_new'),'id':'kt_sign_up_form'}}) }}
+                <!--begin::Aside column-->
+                <div class="d-flex flex-column gap-7 gap-lg-10 w-100 w-lg-300px mb-7 me-lg-10">
+                    <!--begin::Thumbnail settings-->
+                    <div class="card card-flush py-4">
+                        <!--begin::Card header-->
+                        <div class="card-header">
+                            <!--begin::Card title-->
+                            <div class="card-title">
+                                <h2>Club Logo</h2>
+                            </div>
+                            <!--end::Card title-->
+                        </div>
+                        <!--end::Card header-->
+                        <!--begin::Card body-->
+                        <div class="card-body text-center pt-0">
+                            <!--begin::Image input-->
+                            <div class="image-input image-input-empty image-input-outline mb-3" id="kt_image_input_control" data-kt-image-input="true" style="background-image: url({{ asset('assets/media/svg/files/blank-image.svg') }})">
+                                <!--begin::Preview existing avatar-->
+                                <div class="image-input-wrapper w-150px h-150px"></div>
+                                <!--end::Preview existing avatar-->
+                                <!--begin::Label-->
+                                <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                    <i class="bi bi-pencil-fill fs-7"></i>
+                                    <!--begin::Inputs-->
+                                    {{ form_widget(form.image) }}
+
+
+                                    <input type="hidden" name="avatar_remove" />
+                                    <!--end::Inputs-->
+                                </label>
+                                <!--end::Label-->
+                                <!--begin::Cancel-->
+                                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+													<i class="bi bi-x fs-2"></i>
+												</span>
+                                <!--end::Cancel-->
+                                <!--begin::Remove-->
+                                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+													<i class="bi bi-x fs-2"></i>
+												</span>
+                                <!--end::Remove-->
+                            </div>
+                            <!--end::Image input-->
+                        </div>
+                        <!--end::Card body-->
+                    </div>
+                    <!--end::Thumbnail settings-->
+                    <!--begin::Status-->
+                    <div class="card card-flush py-4">
+                        <!--begin::Card header-->
+                        <div class="card-header">
+                            <!--begin::Card title-->
+                            <div class="card-title">
+                                <h2>Club type</h2>
+                            </div>
+                            <!--end::Card title-->
+                        </div>
+                        <!--end::Card header-->
+                        <!--begin::Card body-->
+                        <div class="card-body pt-0">
+                            <!--begin::Select2-->
+                            {{ form_widget(form.typeClub ,{ 'attr': {'class': 'form-control mb-2'} }) }}
+                            <!--end::Select2-->
+                        </div>
+
+                        <!--end::Card body-->
+                    </div>
+                    <!--end::Status-->
+                    <!--begin::Category & tags-->
+                    <div class="card card-flush py-4">
+                        <!--begin::Card header-->
+                        <div class="card-header">
+                            <!--begin::Card title-->
+                            <div class="card-title">
+                                <h2>location</h2>
+                            </div>
+                            <!--end::Card title-->
+                        </div>
+                        <!--end::Card header-->
+                        <!--begin::Card body-->
+                        <div class="card-body pt-0">
+                            <!--begin::Input group-->
+                            <!--begin::Label-->
+                            <label class="form-label">Governorate</label>
+                            <!--end::Label-->
+                            <!--begin::Select2-->
+                            {{ form_widget(form.governorate ,{ 'attr': {'class': 'form-control mb-2'} }) }}
+                            <!--end::Select2-->
+                            <!--end::Input group-->
+                            <!--begin::Input group-->
+                            <!--begin::Label-->
+                            <label class="form-label d-block">Municipality</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            {{ form_widget(form.municipality ,{ 'attr': {'class': 'form-control mb-2'} }) }}
+                            <!--end::Input-->
+                            <!--end::Input group-->
+                        </div>
+                        <!--end::Card body-->
+                    </div>
+                    <!--end::Category & tags-->
+                </div>
+                <!--end::Aside column-->
+                <!--begin::Main column-->
+                <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
+                    <!--begin:::Tabs-->
+                    <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-bold mb-n2">
+                        <!--begin:::Tab item-->
+                        <li class="nav-item">
+                            <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#kt_ecommerce_add_product_general">General</a>
+                        </li>
+                        <!--end:::Tab item-->
+                    </ul>
+                    <!--end:::Tabs-->
+                    <!--begin::Tab content-->
+                    <div class="tab-content">
+                        <!--begin::Tab pane-->
+                        <div class="tab-pane fade show active" id="kt_ecommerce_add_product_general" role="tab-panel">
+                            <div class="d-flex flex-column gap-7 gap-lg-10">
+                                <!--begin::General options-->
+                                <div class="card card-flush py-4">
+                                    <!--begin::Card header-->
+                                    <div class="card-header">
+                                        <div class="card-title">
+                                            <h2>General</h2>
+                                        </div>
+                                    </div>
+                                    <!--end::Card header-->
+                                    <!--begin::Card body-->
+                                    <div class="card-body pt-0">
+                                        <!--begin::Input group-->
+                                        <!--begin::Tax-->
+                                        <div class="d-flex flex-wrap gap-5">
+                                            <!--begin::Input group-->
+                                            <div class="fv-row w-100 flex-md-root">
+                                                <!--begin::Label-->
+                                                <label class="required form-label">club name</label>
+                                                <!--end::Label-->
+                                                <!--begin::Select2-->
+                                                {{ form_widget(form.name ,{ 'attr': {'class': 'form-control mb-2'} }) }}
+                                                <!--end::Select2-->
+                                            </div>
+                                            <!--end::Input group-->
+                                            <!--begin::Input group-->
+                                            <div class="fv-row w-100 flex-md-root">
+                                                <!--begin::Label-->
+                                                <label class="required form-label">Arabic club name</label>
+                                                <!--end::Label-->
+                                                <!--begin::Input-->
+                                                {{ form_widget(form.arabicName ,{ 'attr': {'class': 'form-control mb-2'} }) }}
+                                                <!--end::Input-->
+                                            </div>
+                                            <!--end::Input group-->
+                                        </div>
+                                        <!--end:Tax-->
+                                        <div class="mb-10 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="required form-label">Abreviation</label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            {{ form_widget(form.abreviation ,{ 'attr': {'class': 'form-control mb-2'} }) }}
+                                            <!--end::Input-->
+                                        </div>
+                                        <div class="mb-10 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="required form-label">Email</label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            {{ form_widget(form.email ,{ 'attr': {'class': 'form-control mb-2'} }) }}
+                                            <!--end::Input-->
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Input group-->
+                                        <div>
+                                            <div class="d-flex flex-wrap gap-5">
+                                                <!--begin::Input group-->
+                                                <div class="fv-row w-100 flex-md-root">
+                                                    <!--begin::Label-->
+                                                    <label class="required form-label">Phone number</label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Select2-->
+                                                    {{ form_widget(form.phone ,{ 'attr': {'class': 'form-control mb-2'} }) }}
+                                                    <!--end::Select2-->
+                                                </div>
+                                                <!--end::Input group-->
+                                                <!--begin::Input group-->
+                                                <div class="fv-row w-100 flex-md-root">
+                                                    <!--begin::Label-->
+                                                    <label class="required form-label">Fax number</label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    {{ form_widget(form.fax ,{ 'attr': {'class': 'form-control mb-2'} }) }}
+                                                    <!--end::Input-->
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+                                        </div>
+                                        <!--end::Input group-->
+                                        <div class="mb-10 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="required form-label">Address</label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            {{ form_widget(form.address ,{ 'attr': {'class': 'form-control mb-2'} }) }}
+                                            <!--end::Input-->
+                                        </div>
+                                        <div class="d-flex flex-wrap gap-5">
+                                            <!--begin::Input group-->
+                                            <div class="fv-row w-100 flex-md-root">
+                                                <!--begin::Label-->
+                                                <label class="required form-label">Zip code</label>
+                                                <!--end::Label-->
+                                                <!--begin::Select2-->
+                                                {{ form_widget(form.zipCode ,{ 'attr': {'class': 'form-control mb-2'} }) }}
+                                                <!--end::Select2-->
+                                            </div>
+                                            <!--end::Input group-->
+                                            <!--begin::Input group-->
+                                            <div class="fv-row w-100 flex-md-root">
+                                                <!--begin::Label-->
+                                                <label class="required form-label">Authorisation Code</label>
+                                                <!--end::Label-->
+                                                <!--begin::Input-->
+                                                {{ form_widget(form.autorisationCode ,{ 'attr': {'class': 'form-control mb-2'} }) }}
+                                                <!--end::Input-->
+                                            </div>
+                                            <!--end::Input group-->
+                                            <div class="fv-row w-100 flex-md-root">
+                                                <!--begin::Label-->
+                                                <label class="required form-label">foundation Year</label>
+                                                <!--end::Label-->
+                                                <!--begin::Input-->
+                                                {{ form_widget(form.fondationYear ,{ 'attr': {'class': 'form-control mb-2'} }) }}
+                                                <!--end::Input-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end::Card header-->
+                                </div>
+                                <!--end::General options-->
+                                <!--begin::Media-->
+                                <div class="card card-flush py-4">
+                                    <!--begin::Card header-->
+                                    <div class="card-header">
+                                        <div class="card-title">
+                                            <h2>Coach</h2>
+                                        </div>
+                                    </div>
+                                    <!--end::Card header-->
+                                    <!--begin::Card body-->
+                                    <div class="card-body pt-0">
+                                        <!--begin::Input group-->
+                                        <div class="mb-10 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="required form-label">Coach name</label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            {{ form_widget(form.coachName ,{ 'attr': {'class': 'form-control mb-2'} }) }}
+                                            <!--end::Input-->
+                                        </div>
+                                        <div class="mb-10 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="required form-label">Coach phone number</label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            {{ form_widget(form.coachPhone ,{ 'attr': {'class': 'form-control mb-2 phoneN'} }) }}
+                                            <!--end::Input-->
+                                        </div>
+                                        <!--end::Input group-->
+                                    </div>
+                                    <!--end::Card header-->
+                                </div>
+                                <!--end::Media-->
+                                <!--begin::Media-->
+                                <div class="card card-flush py-4">
+                                    <!--begin::Card header-->
+                                    <div class="card-header">
+                                        <div class="card-title">
+                                            <h2>President</h2>
+                                        </div>
+                                    </div>
+                                    <!--end::Card header-->
+                                    <!--begin::Card body-->
+                                    <div class="card-body pt-0">
+                                        <!--begin::Input group-->
+                                        <div class="mb-10 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="required form-label">president name</label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            {{ form_widget(form.presidentName ,{ 'attr': {'class': 'form-control mb-2'} }) }}
+                                            <!--end::Input-->
+                                        </div>
+                                        <div class="mb-10 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="required form-label">president phone number</label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            {{ form_widget(form.presidentPhone ,{ 'attr': {'class': 'form-control mb-2 phoneN'} }) }}
+                                            <!--end::Input-->
+                                        </div>
+                                        <div class="mb-10 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="required form-label">Secretary name</label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            {{ form_widget(form.secretaryName ,{ 'attr': {'class': 'form-control mb-2 '} }) }}
+                                            <!--end::Input-->
+                                        </div>
+                                        <div class="mb-10 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="required form-label">Secretary phone number</label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            {{ form_widget(form.secretaryPhone ,{ 'attr': {'class': 'form-control mb-2 phoneN'} }) }}
+                                            <!--end::Input-->
+                                        </div>
+                                        <div class="mb-10 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="required form-label">Treasurer name </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            {{ form_widget(form.treasurerName ,{ 'attr': {'class': 'form-control mb-2'} }) }}
+                                            <!--end::Input-->
+                                        </div>
+                                        <div class="mb-10 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="required form-label">Treasurer phone number </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            {{ form_widget(form.treasurerPhone ,{ 'attr': {'class': 'form-control mb-2 phoneN'} }) }}
+                                            <!--end::Input-->
+                                        </div>
+                                        <!--end::Input group-->
+                                    </div>
+                                    <!--end::Card header-->
+                                </div>
+                                <!--end::Media-->
+                            </div>
+                        </div>
+                        <!--end::Tab pane-->
+                    </div>
+                    <!--end::Tab content-->
+                    <div class="d-flex justify-content-end">
+                        <!--begin::Button-->
+                        <a href="/jet-html-free/?page=apps/ecommerce/catalog/products" id="kt_ecommerce_add_product_cancel" class="btn btn-light me-5">Cancel</a>
+                        <!--end::Button-->
+                        <!--begin::Button-->
+                        <button type="submit"  class="btn btn-primary">
+                            <span class="indicator-label">Save Changes</span>
+                        </button>
+                        <!--end::Button-->
+                    </div>
+                </div>
+
+            <!--end::Main column-->
+            {{ form_end(form) }}
+            <!--end::Form-->
+            <!--end::Form-->
+        </div>
+        <!--end::Container-->
+    </div>
+    <!--end::Content-->
+    {% block javascript %}
+    <script>
+        Inputmask({
+        mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]",
+        greedy: false,
+        onBeforePaste: function (pastedValue, opts) {
+        pastedValue = pastedValue.toLowerCase();
+        return pastedValue.replace("mailto:", "");
+    },
+        definitions: {
+        "*": {
+        validator: '[0-9A-Za-z!#$%&"*+/=?^_`{|}~\-]',
+        cardinality: 1,
+        casing: "lower"
+    }
+    }
+    }).mask("#club_email");
+
+    Inputmask({
+        mask : "(00216) 99 999 999",
+        placeholder: "(00216) 99 999 999",
+    }).mask("#club_phone");
+
+    Inputmask({
+        mask : "(00216) 99 999 999",
+        placeholder: "(00216) 99 999 999",
+    }).mask(".phoneN");
+
+    Inputmask({
+        mask : "(00216) 71 999 999",
+        placeholder: "(00216) 71 999 999",
+    }).mask("#club_fax");
+
+    $("#club_fondationYear").daterangepicker({
+        singleDatePicker : true,
+        minYear: 1901,
+        maxYear: parseInt(moment().format("Y-M-D"),10),
+        locale: {
+        format: "Y-M-D"
+    }
+    });
+        var imageInputElement = document.querySelector("#kt_image_input_control");
+        var imageInput = KTImageInput.getInstance(imageInputElement);
+        console.log(imageInput.goElement());
+
+    </script>
+    {% endblock %}
+=======
+    <h1>Create new Club</h1>
+
+    {{ include('club/_form.html.twig') }}
+
+    <a href="{{ path('app_club_index') }}">back to list</a>
+>>>>>>> d52008ea3b4817606005e07e0b14b6d9966dc876
+{% endblock %}

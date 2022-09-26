@@ -34,7 +34,6 @@
             background-image: url('assets/media/illustrations/sigma-1/14.png');
         }
 
-<<<<<<< HEAD
         [data-theme="dark"] .auth-page-bg {
             background-image: url('/assets/media/illustrations/sigma-1/14-dark.png');
         }</style>
@@ -314,24 +313,3 @@
 </body>
 <!--end::Body-->
 </html>
-=======
-{% block title %}Inscription{% endblock %}
-
-{% block body %}
-    {% for flash_error in app.flashes('verifier votre email') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-    {% endfor %}
-
-    <h1>Inscription</h1>
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Mot de passe'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">s'inscrire</button>
-    {{ form_end(registrationForm) }}
-{% endblock %}
->>>>>>> d52008ea3b4817606005e07e0b14b6d9966dc876

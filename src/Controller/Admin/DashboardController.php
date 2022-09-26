@@ -37,19 +37,19 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Tableau de bord', 'fas fa-home');
-        yield MenuItem::linkToCrud('Grade technique', 'fas fa-list', BeltGrade::class);
-        yield MenuItem::linkToCrud('Catégorie d\'athlète', 'fas fa-list', AthletCategory::class);
+        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linkToCrud('BeltGrade', 'fas fa-list', BeltGrade::class);
+        yield MenuItem::linkToCrud('AthletCategory', 'fas fa-list', AthletCategory::class);
         yield MenuItem::linkToCrud('Club', 'fas fa-list', Club::class);
-        yield MenuItem::linkToCrud('Type de dirigeant', 'fas fa-list', DirigeantType::class);
-        yield MenuItem::linkToCrud('Grade d\'entraineur', 'fas fa-list', CoachGrade::class);
-        yield MenuItem::linkToCrud('Gouvernorat', 'fas fa-list', Governorate::class);
-        yield MenuItem::linkToCrud('Membre', 'fas fa-list', Member::class);
-        yield MenuItem::linkToCrud('Type de membre', 'fas fa-list', MemberType::class);
-        yield MenuItem::linkToCrud('Municipalité', 'fas fa-list', Municipality::class);
-        yield MenuItem::linkToCrud('Grade d\'arbitre', 'fas fa-list', RefreeGrade::class);
-        yield MenuItem::linkToCrud('Saison', 'fas fa-list', Season::class);
-        yield MenuItem::linkToCrud('Type de club', 'fas fa-list', TypeClub::class);
+        yield MenuItem::linkToCrud('DirigeantType', 'fas fa-list', DirigeantType::class);
+        yield MenuItem::linkToCrud('CoachGrade', 'fas fa-list', CoachGrade::class);
+        yield MenuItem::linkToCrud('Governorate', 'fas fa-list', Governorate::class);
+        yield MenuItem::linkToCrud('Member', 'fas fa-list', Member::class);
+        yield MenuItem::linkToCrud('MemberType', 'fas fa-list', MemberType::class);
+        yield MenuItem::linkToCrud('Municipality', 'fas fa-list', Municipality::class);
+        yield MenuItem::linkToCrud('RefreeGrade', 'fas fa-list', RefreeGrade::class);
+        yield MenuItem::linkToCrud('Season', 'fas fa-list', Season::class);
+        yield MenuItem::linkToCrud('TypeClub', 'fas fa-list', TypeClub::class);
 
 
     }

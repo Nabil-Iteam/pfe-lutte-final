@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 
-<<<<<<< HEAD
 {% block title %}Member index{% endblock %}
 
 {% block body %}
@@ -1573,62 +1572,4 @@
 </div>
 <!--end::Container-->
 
-=======
-{% block title %}Membre{% endblock %}
-
-{% block body %}
-    <h1>membre</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Image</th>
-                <th>Prénom</th>
-                <th>Nom</th>
-                <th>DateNaiss</th>
-                <th>Genre</th>
-                <th>Email</th>
-                <th>Téléphone</th>
-                <th>Adresse</th>
-                <th>Cin</th>
-                <th>NumAct-Naiss</th>
-                <th>NomArabe</th>
-                <th>CreatedAt</th>
-                <th>UpdatedAt</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for member in members %}
-            <tr>
-                <td>{{ member.id }}</td>
-                <td>{{ member.image }}</td>
-                <td>{{ member.firstName }}</td>
-                <td>{{ member.lastName }}</td>
-                <td>{{ member.birthDay ? member.birthDay|date('Y-m-d') : '' }}</td>
-                <td>{{ member.gender }}</td>
-                <td>{{ member.email }}</td>
-                <td>{{ member.phone }}</td>
-                <td>{{ member.address }}</td>
-                <td>{{ member.cin }}</td>
-                <td>{{ member.numActBirth }}</td>
-                <td>{{ member.arabicName }}</td>
-                <td>{{ member.createdAt ? member.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ member.updatedAt ? member.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_member_show', {'id': member.id}) }}">afficher</a>
-                    <a href="{{ path('app_member_edit', {'id': member.id}) }}">modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="15">Pas d'enregistrement</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_member_new') }}">Créer nouveau membre</a>
->>>>>>> d52008ea3b4817606005e07e0b14b6d9966dc876
 {% endblock %}

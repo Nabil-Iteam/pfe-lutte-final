@@ -1,16 +1,9 @@
 {% extends 'base.html.twig' %}
 
-<<<<<<< HEAD
 {% block title %}Member{% endblock %}
 
 {% block body %}
     <h1>Member</h1>
-=======
-{% block title %}Membre{% endblock %}
-
-{% block body %}
-    <h1>Membre</h1>
->>>>>>> d52008ea3b4817606005e07e0b14b6d9966dc876
 
     <table class="table">
         <tbody>
@@ -23,7 +16,6 @@
                 <td>{{ member.image }}</td>
             </tr>
             <tr>
-<<<<<<< HEAD
                 <th>FirstName</th>
                 <td>{{ member.firstName }}</td>
             </tr>
@@ -37,21 +29,6 @@
             </tr>
             <tr>
                 <th>Gender</th>
-=======
-                <th>Prénom</th>
-                <td>{{ member.firstName }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ member.lastName }}</td>
-            </tr>
-            <tr>
-                <th>Date de Naissance</th>
-                <td>{{ member.birthDay ? member.birthDay|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Genre</th>
->>>>>>> d52008ea3b4817606005e07e0b14b6d9966dc876
                 <td>{{ member.gender }}</td>
             </tr>
             <tr>
@@ -59,19 +36,11 @@
                 <td>{{ member.email }}</td>
             </tr>
             <tr>
-<<<<<<< HEAD
                 <th>Phone</th>
                 <td>{{ member.phone }}</td>
             </tr>
             <tr>
                 <th>Address</th>
-=======
-                <th>Téléphone</th>
-                <td>{{ member.phone }}</td>
-            </tr>
-            <tr>
-                <th>Adresse</th>
->>>>>>> d52008ea3b4817606005e07e0b14b6d9966dc876
                 <td>{{ member.address }}</td>
             </tr>
             <tr>
@@ -79,19 +48,11 @@
                 <td>{{ member.cin }}</td>
             </tr>
             <tr>
-<<<<<<< HEAD
                 <th>NumActBirth</th>
                 <td>{{ member.numActBirth }}</td>
             </tr>
             <tr>
                 <th>ArabicName</th>
-=======
-                <th>Act de naissance</th>
-                <td>{{ member.numActBirth }}</td>
-            </tr>
-            <tr>
-                <th>Nom en arabe</th>
->>>>>>> d52008ea3b4817606005e07e0b14b6d9966dc876
                 <td>{{ member.arabicName }}</td>
             </tr>
             <tr>
@@ -105,15 +66,9 @@
         </tbody>
     </table>
 
-<<<<<<< HEAD
     <a href="{{ path('app_member_index') }}">back to list</a>
 
     <a href="{{ path('app_member_edit', {'id': member.id}) }}">edit</a>
-=======
-    <a href="{{ path('app_member_index') }}">retour a la liste</a>
-
-    <a href="{{ path('app_member_edit', {'id': member.id}) }}">modifier</a>
->>>>>>> d52008ea3b4817606005e07e0b14b6d9966dc876
 
     {{ include('member/_delete_form.html.twig') }}
 {% endblock %}

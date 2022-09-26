@@ -3,7 +3,6 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Municipality;
-use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
@@ -27,12 +26,6 @@ class MunicipalityCrudController extends AbstractCrudController
             TextField::new('arabicName'),
 
         ];
-    }
-    public function configureCrud(Crud $crud): Crud
-    {
-        return $crud
-            ->setEntityLabelInSingular('Municipalité')
-            ->setEntityLabelInPlural('Municipalités');
     }
 
 }

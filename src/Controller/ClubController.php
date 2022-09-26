@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Club;
 use App\Form\ClubType;
 use App\Repository\ClubRepository;
-<<<<<<< HEAD
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
@@ -13,12 +12,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
-=======
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
->>>>>>> d52008ea3b4817606005e07e0b14b6d9966dc876
 
 /**
  * @Route("/club")
@@ -38,23 +31,17 @@ class ClubController extends AbstractController
     /**
      * @Route("/new", name="app_club_new", methods={"GET", "POST"})
      */
-<<<<<<< HEAD
     public function new(Request $request, ClubRepository $clubRepository,UserRepository $userRepository,SluggerInterface $slugger): Response
     {
         if ($this->getUser()->isHasClub()){
             return $this->redirectToRoute('app_club_edit', [], Response::HTTP_SEE_OTHER);
 
         }
-=======
-    public function new(Request $request, ClubRepository $clubRepository): Response
-    {
->>>>>>> d52008ea3b4817606005e07e0b14b6d9966dc876
         $club = new Club();
         $form = $this->createForm(ClubType::class, $club);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-<<<<<<< HEAD
 
             $clubLogo = $form->get('image')->getData();
             if ($clubLogo) {
@@ -87,11 +74,6 @@ class ClubController extends AbstractController
 
 
             return $this->redirectToRoute('app_club_edit', [], Response::HTTP_SEE_OTHER);
-=======
-            $clubRepository->add($club, true);
-
-            return $this->redirectToRoute('app_club_index', [], Response::HTTP_SEE_OTHER);
->>>>>>> d52008ea3b4817606005e07e0b14b6d9966dc876
         }
 
         return $this->renderForm('club/new.html.twig', [
@@ -111,7 +93,6 @@ class ClubController extends AbstractController
     }
 
     /**
-<<<<<<< HEAD
      * @Route("/edit/my", name="app_club_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, ClubRepository $clubRepository): Response
@@ -119,12 +100,6 @@ class ClubController extends AbstractController
         $club = $clubRepository->findOneBy(['createdBy'=>$this->getUser()]);
         $image = $club->getImage();
         $club->setImage(null);
-=======
-     * @Route("/{id}/edit", name="app_club_edit", methods={"GET", "POST"})
-     */
-    public function edit(Request $request, Club $club, ClubRepository $clubRepository): Response
-    {
->>>>>>> d52008ea3b4817606005e07e0b14b6d9966dc876
         $form = $this->createForm(ClubType::class, $club);
         $form->handleRequest($request);
 
@@ -137,10 +112,7 @@ class ClubController extends AbstractController
         return $this->renderForm('club/edit.html.twig', [
             'club' => $club,
             'form' => $form,
-<<<<<<< HEAD
             'image'=>$image
-=======
->>>>>>> d52008ea3b4817606005e07e0b14b6d9966dc876
         ]);
     }
 

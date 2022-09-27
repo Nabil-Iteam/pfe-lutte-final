@@ -63,27 +63,27 @@ class Member
     private $gender;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255 , nullable=true)
      */
     private $email;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , nullable=true)
      */
     private $phone;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255 , nullable=true)
      */
     private $address;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , nullable=true)
      */
     private $cin;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , nullable=true)
      */
     private $numActBirth;
 
@@ -93,28 +93,28 @@ class Member
     private $club;
 
     /**
-     * @ORM\ManyToMany(targetEntity=BeltGrade::class, inversedBy="members")
+     * @ORM\ManyToMany(targetEntity=BeltGrade::class, inversedBy="members" )
      */
     private $beltGrade;
 
     /**
-     * @ORM\ManyToMany(targetEntity=CoachGrade::class, inversedBy="members")
+     * @ORM\ManyToMany(targetEntity=CoachGrade::class, inversedBy="members" )
      */
     private $coachGrade;
 
     /**
-     * @ORM\ManyToMany(targetEntity=DirigeantType::class, inversedBy="members")
+     * @ORM\ManyToMany(targetEntity=DirigeantType::class, inversedBy="members" )
      */
     private $dirigeantType;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Municipality::class, inversedBy="members")
+     * @ORM\ManyToOne(targetEntity=Municipality::class, inversedBy="members" )
      * @ORM\JoinColumn(nullable=false)
      */
     private $municipality;
 
     /**
-     * @ORM\ManyToMany(targetEntity=RefreeGrade::class, inversedBy="members")
+     * @ORM\ManyToMany(targetEntity=RefreeGrade::class, inversedBy="members" )
      */
     private $refreeGrade;
 
@@ -126,12 +126,12 @@ class Member
 
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255 , nullable=true , nullable=true)
      */
     private $arabicName;
 
     /**
-     * @ORM\ManyToOne(targetEntity=AthletCategory::class, inversedBy="members")
+     * @ORM\ManyToOne(targetEntity=AthletCategory::class, inversedBy="members" )
      */
     private $athletCategory;
 
@@ -148,6 +148,12 @@ class Member
      */
 
     private $updatedAt;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=MemberType::class, inversedBy="members")
+     */
+    private $memberType;
+
 
 
 
@@ -500,7 +506,17 @@ class Member
         return $this->image;
     }
 
+    public function getMemberType(): ?MemberType
+    {
+        return $this->memberType;
+    }
 
+    public function setMemberType(?MemberType $memberType): self
+    {
+        $this->memberType = $memberType;
+
+        return $this;
+    }
 
 
 }
